@@ -51,6 +51,8 @@
 
         <button id="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
 
+        <button onclick="toggleTitle()">Ubah Judul</button>
+
         <form action="HomeRegister.html" onsubmit="handleForm(event)">
             <div class="form-group">
                 <label for="name">Name : </label>
@@ -97,8 +99,10 @@
 
                 // sessionStorage = setItem('name', username)
                 sessionStorage.setItem('name', username);
+                sessionStorage.setItem('email', email);
+                sessionStorage.setItem('password', password);
 
-                window.location.href = "HomeRegister.html"
+                window.location.href = "HomeRegister.html?username=" + username;
             }
 
             function toggleMode() {
@@ -119,8 +123,29 @@
 
                 // LANGKAH-LANGKAH MEMBUAT TOGGLE BUTTON
                 // 1. buat button dengan attribut onclick sebagai trigger tanpa harus menggunakan type
-                // 2. initialisasi class yang mau diganti
+                // 2. initialisasi class yang mau diganti, contoh container const container = document.querySelector('.container');
+                // 3. gunakan properti classList untuk mengelola class
+                // 4. gunakan method contains()
                 //  
+            }
+
+            function toggleTitle() {
+                const title = document.querySelector('h2');
+                // title.textContent = 'Teks'
+
+                // Cek status saat ini menggunakan atribut data
+                const currentStatus = title.getAttribute('data-status');
+                console.log(currentStatus);
+
+                if (currentStatus === 'original') {
+                    // Jika statusnya 'original', ubah ke nilai baru
+                    title.textContent = 'Teks Baru';
+                    title.setAttribute('data-status', 'changed');
+                } else {
+                    // Jika statusnya 'changed', kembalikan ke nilai semula
+                    title.textContent = 'Teks';
+                    title.setAttribute('data-status', 'original');
+                }
             }
         </script>
     </div>
