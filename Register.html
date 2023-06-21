@@ -36,6 +36,7 @@
             padding: 5px;
             border-radius: 15px;
             color: white;
+            border: none;
         }
         button:hover {
             color: black;
@@ -94,24 +95,32 @@
                 const password = document.getElementById("password").value
                 const confirmPassword = document.getElementById("confirmPassword").value
 
-                
+                // sessionStorage = setItem('name', username)
+                sessionStorage.setItem('name', username);
 
                 window.location.href = "HomeRegister.html"
             }
 
             function toggleMode() {
+                // classList = digunakan untuk mengelola daftar class CSS dari elemen tersebut..
+                // contains = adalah metode pada properti classList, untuk memeriksa apakah ada class dark-mode? kalo ta ada tampilkan light-mode
                 const container = document.querySelector('.container');
                 const currentMode = container.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
 
                 if (currentMode === 'dark-mode') {
-                    container.style.backgroundColor = '#f2f2f2'; 
-                    container.style.color = '#000';
-                } else {
                     container.style.backgroundColor = '#000'; 
-                    container.style.color = '#fff'; 
+                    container.style.color = '#fff';
+                } else {
+                    container.style.backgroundColor = '#f2f2f2'; 
+                    container.style.color = '#000'; 
                 }
 
                 container.classList.toggle('dark-mode'); 
+
+                // LANGKAH-LANGKAH MEMBUAT TOGGLE BUTTON
+                // 1. buat button dengan attribut onclick sebagai trigger tanpa harus menggunakan type
+                // 2. initialisasi class yang mau diganti
+                //  
             }
         </script>
     </div>
