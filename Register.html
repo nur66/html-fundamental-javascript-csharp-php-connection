@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        /* Gaya elemen pada mode malam */
-        /* .dark-mode {
-            background-color: #000;
-            color: #FFF;
-        } */
         .container {
             max-width: 400px;
             /* background-color: #f2f2f2; */
@@ -104,24 +99,19 @@
                 window.location.href = "HomeRegister.html"
             }
 
-            // function toggleMode() {
-            //     const container = document.querySelector('.container');
-            //     container.classList.toggle('dark-mode'); // Toggle class 'dark-mode'
-            // }
-
             function toggleMode() {
                 const container = document.querySelector('.container');
                 const currentMode = container.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
 
                 if (currentMode === 'dark-mode') {
-                    container.style.backgroundColor = '#f2f2f2'; // Ubah ke warna background mode siang
-                    container.style.color = '#000'; // Ubah ke warna teks mode siang
+                    container.style.backgroundColor = '#f2f2f2'; 
+                    container.style.color = '#000';
                 } else {
-                    container.style.backgroundColor = '#000'; // Ubah ke warna background mode malam
-                    container.style.color = '#fff'; // Ubah ke warna teks mode malam
+                    container.style.backgroundColor = '#000'; 
+                    container.style.color = '#fff'; 
                 }
 
-                container.classList.toggle('dark-mode'); // Toggle class 'dark-mode'
+                container.classList.toggle('dark-mode'); 
             }
         </script>
     </div>
