@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Gaya elemen pada mode malam */
+        /* .dark-mode {
+            background-color: #000;
+            color: #FFF;
+        } */
+        .container {
+            max-width: 400px;
+            /* background-color: #f2f2f2; */
+            border-radius: 15px;
+            margin: auto;
+            padding: 50px
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            display: block;
+            margin-bottom: 15px;
+        }
+        input {
+            margin-top: 5px;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        textarea {
+            margin-top: 5px;
+            width: 100%;
+            height: 150px;
+        }
+        button {
+            background-color: green;
+            width: 100%;
+            padding: 5px;
+            border-radius: 15px;
+            color: white;
+        }
+        button:hover {
+            color: black;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Register</h2>
+
+        <button id="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
+
+        <form action="HomeRegister.html" onsubmit="handleForm(event)">
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" id="name" placeholder="input your name" />
+            </div>
+            <div class="form-group">
+                <label for="pdb">Place/date of birth : </label>
+                <input type="text" id="pdb" placeholder="input your place of birth" />
+            </div>
+            <div class="form-group">
+                <label for="address">Address : </label>
+                <textarea type="text" id="address" placeholder="input your address" ></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input type="email" id="email" placeholder="input your email" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password" id="password" placeholder="input your password" />
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Password Confirmation : </label>
+                <input type="password" id="confirmPassword" placeholder="input your confirmation password" />
+            </div>
+
+
+            <button type="submit">submit</button>
+            
+        </form>
+
+        <script>
+            function handleForm(event){
+                event.preventDefault();
+
+                // initialize
+                const username = document.getElementById("name").value
+                const pdb = document.getElementById("pdb").value
+                const address = document.getElementById("address").value
+                const email = document.getElementById("email").value
+                const password = document.getElementById("password").value
+                const confirmPassword = document.getElementById("confirmPassword").value
+
+                
+
+                window.location.href = "HomeRegister.html"
+            }
+
+            // function toggleMode() {
+            //     const container = document.querySelector('.container');
+            //     container.classList.toggle('dark-mode'); // Toggle class 'dark-mode'
+            // }
+
+            function toggleMode() {
+                const container = document.querySelector('.container');
+                const currentMode = container.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+
+                if (currentMode === 'dark-mode') {
+                    container.style.backgroundColor = '#f2f2f2'; // Ubah ke warna background mode siang
+                    container.style.color = '#000'; // Ubah ke warna teks mode siang
+                } else {
+                    container.style.backgroundColor = '#000'; // Ubah ke warna background mode malam
+                    container.style.color = '#fff'; // Ubah ke warna teks mode malam
+                }
+
+                container.classList.toggle('dark-mode'); // Toggle class 'dark-mode'
+            }
+        </script>
+    </div>
+
+</body>
+</html>
