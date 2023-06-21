@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        table {
+            /* border-collapse: collapse; */
+            border: 1px solid #bbb;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 5px;
+            text-align: left;
+            border-bottom:1px solid #ddd;
+            border-right: 1px solid #ddd;
+            /* border: 1px solid #bbb */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="Login.html">Back to Login</a>
+        <h1>Welcome, <span id="username"></span></h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td id="name-value"></td>
+                <td id="email-value"></td>
+                <td id="password-value"></td>
+            </tr>
+        </table>
+
+        <script>
+            // const urlParams = new URLSearchParams(window.location.search)
+            // const username = urlParams.get("username")
+            // document.getElementById("username").textContent = username
+
+            // let email;
+            // if (sessionStorage.getItem('email') !== null) {
+            //     email = sessionStorage.getItem('email');
+            // } else {
+            //     email = urlParams.get("email");
+            // }
+            // const password = sessionStorage.getItem('password')
+
+            // console.log(username)
+            // console.log(email)
+            // console.log(password)
+
+            // document.getElementById('name-value').textContent = username;
+            // document.getElementById('email-value').textContent = email;
+            // document.getElementById('password-value').textContent = password;
+
+
+           
+
+            
+             // menggunakan method post dan mengambil data dari form
+
+             // Mengambil data dari cookie
+            function getCookieValue(name) {
+                const cookies = document.cookie.split("; ");
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].split("=");
+                    if (cookie[0] === name) {
+                        return decodeURIComponent(cookie[1]);
+                    }
+                }
+                return "";
+            }
+
+            // Mengambil data dari sessionStorage
+            const email = sessionStorage.getItem('email');
+            const password = sessionStorage.getItem('password');
+
+            // Mengambil data dari URL menggunakan URLSearchParams
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const formData = Object.fromEntries(urlSearchParams.entries());
+
+            const username = formData.username || getCookieValue("username");
+            const storedEmail = formData.email || email;
+            const storedPassword = formData.password || password;
+
+            console.log(username);
+            console.log(storedEmail);
+            console.log(storedPassword);
+
+            document.getElementById('username').textContent = username;
+            document.getElementById('name-value').textContent = username;
+            document.getElementById('email-value').textContent = storedEmail;
+            document.getElementById('password-value').textContent = storedPassword;
+        </script>
+    </div>
+</body>
+</html>
