@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+
+        // Membuat array & assign
+        const fruit = ['🥭','🍎','🍏','🍅']
+        const heart = new Array('❤','🧡','💛','💚','💙')
+
+        // membuat array
+        const myFruit = []
+        const myHeart = []
+
+        // assign array
+        myFruit[0] = '🍌'
+        myFruit[1] = '🍐'
+        myHeart[0] = '💔'
+        myHeart[1] = '💘'
+        myHeart[2] = '🤍'
+
+
+        // include in array? nb: return boolean
+        const banana = myFruit.includes('🍌')   // true
+        const watermellon = myFruit.includes('🍉')  // false
+
+        // index array
+        const apple = fruit.indexOf('🍎')
+        const tomato = fruit.indexOf('🍅')
+        const positionOfPear = fruit.indexOf('🍏')
+        const indexBefore = positionOfPear - 1
+        const indexAfter = positionOfPear + 1
+        const before = fruit[indexBefore]
+        const after = fruit[indexAfter]
+
+        // find first index
+        const firstIndex = fruit.shift()
+
+        // find last index
+        const lastIndex = fruit.pop()
+
+        // array key name
+        const arraySaya = []
+        arraySaya['lemon'] = '🍋'
+        arraySaya['avocado'] = '🥑'
+
+        console.log(arraySaya['length']);
+        console.log(arraySaya['lemon']);
+
+    </script>
+
+</body>
+</html>

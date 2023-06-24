@@ -7,7 +7,45 @@
 </head>
 <body>
     <div class="container">
-        <h2>Meni</h2>
+        <h2>Welcome, <span id="greetingName"></span></h2>
+        <button class="light-mode" onclick="toggleMode()">Night Mode</button>
     </div>
+
+    <script>
+        const urlSearchParams = new URLSearchParams(document.location.search)
+        const username = urlSearchParams.get("username")
+        console.log(urlSearchParams)
+        console.log(username)
+
+        // AMBIL DATA & ASSIGN
+        const greetingName = document.querySelector('#greetingName')
+        document.querySelector("#greetingName").textContent = username
+        console.log(document.querySelector("#greetingName").textContent = username)
+        
+
+
+
+        // BUAT ELEMENT
+        const h1 = document.createElement('h1')
+        h1.textContent = 'PAKAI TEXTCONTENT'
+
+        const namaSaya = document.createElement('p')
+        namaSaya.innerHTML = '<marquee>PAKAI INNERHTML</marquee>'
+
+        const namaKamu = document.createElement('p')
+        namaKamu.innerText = 'PAKAI INNERTEXT'
+
+        //----- Daftarkan ke body
+        // document.body.append(h1)
+        // document.body.append(namaSaya)
+        // document.body.append(namaKamu)
+
+        //----- Atau buat dulu wadah body nya
+        const body = document.body
+        body.append(h1)
+        body.append(namaSaya)
+        body.append(namaKamu)
+
+    </script>
 </body>
 </html>
