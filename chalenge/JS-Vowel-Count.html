@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Count</title>
+</head>
+<body>
+    <script>
+        function getVowel(character) {
+            // var result = 0
+            // var vowel = new Array()
+            // vowel = ['a','i','u','e','o'];
+
+            // var arr = character.split('')
+            // arr.map( item => {
+            //     if (vowel.includes(item)){
+            //         result++
+            //     }
+            // })
+
+            // return result
+
+            const vowel = ['a','i','u','e','o'];
+            console.log(character.trim())
+            var result = 0;
+            const arr = character.trim().split('')
+            arr.map(item => {
+                if ( vowel.includes(item)) result++;
+            })
+            
+            return result;
+        }
+
+        console.log(getVowel("Lisa mufia"));
+    </script>
+</body>
+</html>
