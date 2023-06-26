@@ -29,10 +29,10 @@ function solution(number){
     let romanNumeral = '';
     
     // Iterate over the symbols and subtract their values from the number
-    for (const symbol of symbols) {
-        while (number >= symbol.value) {
-        romanNumeral += symbol.symbol;
-        number -= symbol.value;
+    for (const obj of symbols) {
+        while (number >= obj.value) {
+        romanNumeral += obj.symbol;
+        number -= obj.value;
         }
     }
     
