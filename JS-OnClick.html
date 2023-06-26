@@ -20,9 +20,9 @@
 
     <script>
         function nightMode() {
-            const bodyElement = document.body
+            // // classList digunakan dalam manipulasi dan pengelolaan kelas pada elemen HTML.
 
-            // classList digunakan dalam manipulasi dan pengelolaan kelas pada elemen HTML.
+            const bodyElement = document.body
             if (bodyElement.classList.contains("day-mode")) {
                 bodyElement.classList.remove("day-mode");
                 bodyElement.classList.add("night-mode");
@@ -30,8 +30,7 @@
                 bodyElement.classList.remove("night-mode");
                 bodyElement.classList.add("day-mode");
             }
-
-            console.log(bodyElement.classList)
+            console.log(bodyElement.classList);
         }
     </script>
 </body>
