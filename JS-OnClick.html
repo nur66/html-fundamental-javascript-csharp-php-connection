@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On Click</title>
     <style>
-        .nightMode {
+        .day-mode {
+            background-color: white;
+            color: black;
+        }
+        .night-mode {
             background-color: black;
             color: white;
         }
     </style>
 </head>
-<body>
+<body class="day-mode">
     <button onclick="nightMode()">Night Mode</button>
 
     <script>
         function nightMode() {
-            
+            const bodyElement = document.body
+
+            // classList digunakan dalam manipulasi dan pengelolaan kelas pada elemen HTML.
+            if (bodyElement.classList.contains("day-mode")) {
+                bodyElement.classList.remove("day-mode");
+                bodyElement.classList.add("night-mode");
+            } else {
+                bodyElement.classList.remove("night-mode");
+                bodyElement.classList.add("day-mode");
+            }
+
+            console.log(bodyElement.classList)
         }
     </script>
 </body>
